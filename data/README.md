@@ -1,7 +1,8 @@
 # Project XD-Audio: Dataset Metadata & Artistic Philosophy
 
 ## Audio Benchmarks
-*   `synthetic_test_case_dense.mp3`: ~~High-density multi-track audio demonstrating 2D latent spectral collapse and phase dynamic artifacts.~~ For now a generic 4 minutes 128k mp3 audio track, so the scripts can be run out of the box.
+*   ~~`synthetic_test_case_dense.mp3`: High-density multi-track audio demonstrating 2D latent spectral collapse and phase dynamic artifacts.~~ The initial test data had been created as a private side project. The actual audio showing the issue cannot be provided here, due to the possibility of this infringing someones copyright. A sample will be provided, if time and interest permit or warrant it. The lack of a sample would not diminish the PoC. It could provide an olfactory example though.
+*   `synthetic_test_case_clean.mp3`: A generic, relatively clean. 4 minutes 128k mp3 audio track, so the scripts can be run out of the box.
 
 ## Philosophy & Creative Commons License
 To ensure this artistic piece remains permanently free and accessible to the global community, it is licensed under the **Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)**.
