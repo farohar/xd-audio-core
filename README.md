@@ -60,7 +60,7 @@ The network enforces strict separation between **Physics** and **Timbre**:
 
 ## 4. Scalability & VRAM Optimization Strategy
 
-To bypass the quadratic memory complexity `$O(N^2)$` of long monolith transformations, inference scales linearly `$O(N)$` using rolling **10-Second 4D Chunk Segments**:
+To bypass the quadratic memory complexity `O(N²)` of long monolith transformations, inference scales linearly `O(N)` using rolling **10-Second 4D Chunk Segments**:
 
 *   **Grid Specs:** $1,722 \text{ frames (Time)} \times 1,025 \text{ bins (Freq)} \times 32 \text{ slices (Pan)} \times 16 \text{ bins (Phase)}$.
 *   **VRAM Consumption:** Fixed at **~1.8 GB VRAM** in Float16 execution, allowing local inference on consumer-grade GPU hardware.
