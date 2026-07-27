@@ -1,0 +1,18 @@
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuelle Umgebung (uv)
+.xdenv/
+.venv/
+venv/
+
+# Lokale Audio-Testdateien (Wir loggen nur die 2 spezifischen mp3s ein!)
+*.wav
+*.mp3
+!synthetic_test_case_clean.mp3
+
+# IDEs
+.vscode/
+.idea/

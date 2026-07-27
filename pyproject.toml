@@ -1,0 +1,15 @@
+[project]
+name = "xd-audio-core"
+version = "0.1.0"
+description = "Native 4D Spatio-Temporal Lattice Space for Generative Audio Inference"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "librosa>=0.10.0",
+    "soundfile>=0.12.0",
+]
+
+[tool.uv]
+managed = true
