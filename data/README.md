@@ -10,4 +10,4 @@ To ensure this artistic piece remains permanently free and accessible to the glo
 ### What this means:
 *   **Share & Adapt:** Anyone is free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
 *   **Attribution:** You must give appropriate credit to the author (**farohar**), provide a link to the license, and indicate if changes were made.
-*   **ShareAlike:** If you remix, transform, or build upon the material, you must distribute your contributions under the exact same license (CC BY-SA 4.0). This prevents any corporate entity or individual from locking down this song under an exclusive closed copyright.
+*   **ShareAlike:** If you remix, transform, or build upon the material, you must distribute your contributions under the exact same license (CC BY-SA 4.0).
