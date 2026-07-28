@@ -1,0 +1,40 @@
+name: GitHub Traffic Analytics
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' # Läuft jeden Sonntag um Mitternacht
+  workflow_dispatch: # Erlaubt manuellen Start
+
+env:
+  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true' # Unterdrückt die Node-Deprecation-Warnung im Log
+
+jobs:
+  update-traffic:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Fetch Traffic Data
+      run: |
+        mkdir -p traffic-data
+        
+        curl -s -H "Authorization: token ${{ secrets.TRAFFIC_SECRET }}" \
+             https://github.com{{ github.repository }}/traffic/clones \
+             > traffic-data/clones.json
+             
+        curl -s -H "Authorization: token ${{ secrets.TRAFFIC_SECRET }}" \
+             https://github.com{{ github.repository }}/traffic/views \
+             > traffic-data/views.json
+             
+        curl -s -H "Authorization: token ${{ secrets.TRAFFIC_SECRET }}" \
+             https://github.com{{ github.repository }}/traffic/popular/referrers \
+             > traffic-data/referrers.json
+
+    - name: Commit and Push changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git add traffic-data/
+        git commit -m "Updates traffic data [skip ci]" || exit 0
+        git push
