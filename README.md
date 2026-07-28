@@ -78,7 +78,30 @@ We invite the community to collaborate on the initial Proof of Concept (PoC) pip
 
 ---
 
-## 6. Request for Comments (RFC)
+## 6. The Inverse Pathway: Native 4D Audio Understanding & Deterministic Tagging
+
+To solve the "Semantic Guesswork Dilemma" inherent in legacy 2D audio taggers, Project XD-Audio introduces a **Dual-Purpose 4D Encoder Architecture**. Because the 4D Lattice Grid ($X, Y, Z, \Phi$) mathematically segregates overlapping timbres by their spatial coordinates and phase alignments, we can extract flawless, deterministic feature tokens directly from the structure without relying on probabilistic 2D guesswork.
+
+### 6.1 Spatial-Acoustic Attention Masking
+Instead of feeding a flat image to an attention mechanism, the XD-Audio Understanding Model employs **Spatio-Temporal Attention Blocks**. 
+
+- **Phase/Pan Gating:** The encoder isolates specific slices along the $Z$ (Stereo-Panorama) and $\Phi$ (Phase) axes. 
+- **Example:** Double-tracked guitars sitting at $Z = -0.9$ and $Z = +0.9$ are processed in entirely separate neural pathways than a centered vocal track at $Z = 0.0$.
+- **Result:** The model extracts the acoustic fingerprint of the guitar *independently* of the vocal or synth, preventing timbre-bleeding and mislabeling.
+
+### 6.2 Deterministic Multi-Layer Feature Extraction
+Instead of predicting generic text labels (e.g., "rock music"), the 4D Encoder maps the lattice directly to a structured, objective latent vector matrix:
+
+1. **Physical Tokenizer (DSP-Driven):** Extracts absolute mathematical constants directly from the 4D grid coordinates:
+   - **BPM / Micro-Timing:** Calculated deterministically via temporal $X$-axis energy spikes.
+   - **Stereo Width / Center Mass:** Extracted directly from the $Z$-axis density distribution.
+   - **Acoustic Environment / Reverb Depth:** Extracted from $\Phi$-axis hysteresis decay.
+
+2. **Timbral Text Tokenizer (Cross-Modal Alignment):** A contrastive learning framework (similar to CLAP, but trained on 4D Latent Cubes) aligns the isolated spatial clusters with precise text tokens. Because the input features are physically clean (unmasked), a guitar is always labeled a guitar, and a synth is always labeled a synth.
+
+---
+
+## 7. Request for Comments (RFC)
 
 We are actively seeking feedback from Digital Signal Processing (DSP) engineers and Machine Learning researchers on the following areas:
 *   Optimal bin sizing for the continuous Phase ($\Phi$) axis to prevent quantization noise without exceeding the 1.8 GB VRAM buffer.
