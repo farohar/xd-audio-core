@@ -6,7 +6,7 @@ This repository contains the core digital signal processing (DSP) engines and te
 
 ## Architectural Specification
 The full mathematical and theoretical foundation for this framework is formally documented as **RFC-0001** in the central specification archive:
-👉 **[Read the Full Specification (RFC-0001)](https://github.com/farohar/farohar-rfcs/RFC-0001/README.md)**
+👉 **[Read the Full Specification (RFC-0001)](https://github.com/farohar/farohar-rfcs/blob/main/RFC-0001/README.md)**
 
 ## Core Features Implemented Here
 * **4D Tensor Grid Processing:** Low-level operations mapping $X, Y, Z,$ and $\Phi$ coordinate axes natively.
